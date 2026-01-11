@@ -1,8 +1,14 @@
 import React from 'react'
+import Home from './Pages/Home'
+import { Routes,Route} from 'react-router-dom'
+import Branches from './Pages/Branches'
 
 const App = () => {
   return (
-    <div>App</div>
+     <Routes>
+      <Route path="/" element={<Home />} />
+      <Route path="/branches" element={<Branches />} />
+    </Routes>
   )
 }
 
