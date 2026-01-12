@@ -5,6 +5,7 @@ import Branches from './Pages/Branches'
 import Campus from './Pages/Campus'
 import FacilitiesandSupport from './Pages/FacilitiesandSupport'
 import Fests from './Pages/Fests'
+import FAQs from './Pages/FAQs'
 
 const App = () => {
   return (
@@ -14,6 +15,7 @@ const App = () => {
       <Route path="/campus-infra" element={<Campus />} />
       <Route path="/facilities-support" element={<FacilitiesandSupport />} />
       <Route path="/fests" element={<Fests />} />
+      <Route path="/faq" element={<FAQs />} />
     </Routes>
   )
 }
