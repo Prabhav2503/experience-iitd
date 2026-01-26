@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import logo from "../assets/logo.png";
+import outreachlogo from "../assets/outreachlogo.png";
 
 function Navbar() {
   const [open, setOpen] = useState(false);
