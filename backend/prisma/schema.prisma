@@ -40,8 +40,8 @@ model Replies {
 model User {
   id      String   @id @default(auto()) @map("_id") @db.ObjectId
   name     String
+  role     String  @default("user")
   username String  @unique
   password String
-
   createdAt DateTime @default(now())
 }
