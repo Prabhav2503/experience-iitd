@@ -1,4 +1,5 @@
-import React from "react";
+import React, { useState } from "react";
+import AskDialog from "../Components/AskDialog.jsx";
 import {
   FaLinkedinIn,
   FaInstagram,
@@ -8,65 +9,79 @@ import {
 import { MdEmail } from "react-icons/md";
 
 function Ask() {
+  const [openDialog, setOpenDialog] = useState(false);
+
   return (
-    <section className="w-full min-h-[80vh] flex flex-col justify-between bg-gradient-to-b from-[#5a5a5a] via-[#3d3d3d] to-[#1f1f1f] text-white">
+    <>
+      {/* DIALOG */}
+      <AskDialog
+        isOpen={openDialog}
+        onClose={() => setOpenDialog(false)}
+      />
 
-      {/* ================= CENTER CONTENT ================= */}
-      <div className="flex-1 flex flex-col items-center justify-center text-center -mt-10 px-6">
+      <section className="w-full min-h-[80vh] flex flex-col justify-between bg-gradient-to-b from-[#5a5a5a] via-[#3d3d3d] to-[#1f1f1f] text-white">
 
-        <h1 className="text-5xl font-poppins md:text-7xl font-bold leading-tight">
-          Looking for
-          <br />
-          something else!
-        </h1>
+        {/* ================= CENTER CONTENT ================= */}
+        <div className="flex-1 flex flex-col items-center justify-center text-center -mt-10 px-6">
 
-        <button className="mt-10 font-poppins bg-[#FB923C] hover:bg-[#f97316] text-white font-bold text-2xl px-14 py-3 rounded-xl shadow-md transition">
-          Ask
-        </button>
+          <h1 className="text-5xl font-poppins md:text-7xl font-bold leading-tight">
+            Looking for
+            <br />
+            something else!
+          </h1>
 
-        <p className="mt-4 font-poppins text-sm text-gray-300">
-          Get the answers you need.
-        </p>
-      </div>
+          {/* ASK BUTTON */}
+          <button
+            onClick={() => setOpenDialog(true)}
+            className="mt-10 font-poppins bg-[#FB923C] hover:bg-[#f97316] text-white font-bold text-2xl px-14 py-3 rounded-xl shadow-md transition"
+          >
+            Ask
+          </button>
 
-      {/* ================= FOOTER ================= */}
-      <div className=" px-6 py-4">
-        <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between gap-2 text-sm">
+          <p className="mt-4 font-poppins text-sm text-gray-300">
+            Get the answers you need.
+          </p>
+        </div>
 
-          <p className="font-medium font-akatab text-2xl">Connect with us on:</p>
+        {/* ================= FOOTER ================= */}
+        <div className="px-6 py-4">
+          <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between gap-2 text-sm">
 
-          <div className="flex flex-wrap items-center gap-12 font-akatab font-medium">
+            <p className="font-medium font-akatab text-2xl">
+              Connect with us on:
+            </p>
 
-            <a href="https://www.linkedin.com/company/academic-outreach-iitd/" className="flex items-center gap-2">
-                <FaLinkedinIn className="text-[#0A66C2] text-2xl " />
+            <div className="flex flex-wrap items-center gap-12 font-akatab font-medium">
+              <a href="#" className="flex items-center gap-2">
+                <FaLinkedinIn className="text-[#0A66C2] text-2xl" />
                 <span>LinkedIn</span>
-                </a>
+              </a>
 
-                <a href="https://www.instagram.com/outreach_iitd?igsh=bzl4ejV4bDkybzc%3D" className="flex items-center gap-2">
-                <FaInstagram className="text-[#E1306C] text-2xl " />
+              <a href="#" className="flex items-center gap-2">
+                <FaInstagram className="text-[#E1306C] text-2xl" />
                 <span>Instagram</span>
-                </a>
+              </a>
 
-                <a href="https://whatsapp.com/channel/0029Vb994QoLtOjByAcUQW3n" className="flex items-center gap-2">
-                <FaWhatsapp className="text-[#25D366] text-2xl " />
+              <a href="#" className="flex items-center gap-2">
+                <FaWhatsapp className="text-[#25D366] text-2xl" />
                 <span>WhatsApp</span>
-                </a>
+              </a>
 
-                <a href="mailto:adoni@iitd.ac.in" className="flex items-center gap-2">
-                <MdEmail className="text-[#EA4335] text-2xl " />
+              <a href="#" className="flex items-center gap-2">
+                <MdEmail className="text-[#EA4335] text-2xl" />
                 <span>adoni@iitd.ac.in</span>
-                </a>
+              </a>
 
-                <a href="https://academicoutreach.iitd.ac.in" className="flex items-center gap-2">
-                <FaGlobe className="text-[#3B82F6] text-2xl " />
-                <span>https://academicoutreach.iitd.ac.in</span>
-                </a>
-
+              <a href="#" className="flex items-center gap-2">
+                <FaGlobe className="text-[#3B82F6] text-2xl" />
+                <span>academicoutreach.iitd.ac.in</span>
+              </a>
+            </div>
 
           </div>
         </div>
-      </div>
-    </section>
+      </section>
+    </>
   );
 }
 
