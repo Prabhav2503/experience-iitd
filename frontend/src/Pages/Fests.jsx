@@ -1,11 +1,11 @@
 import React from "react";
-import Navbar from "../components/Navbar";
+// import Navbar from "../components/Navbar";
 import iitdhome from "../assets/iitdhome.png";
 
 function Fests() {
   return (
     <>
-      <Navbar />
+      {/* <Navbar /> */}
 
       <section className="w-full bg-white py-16 px-4 font-barlow">
         <div className="max-w-5xl mx-auto text-center">

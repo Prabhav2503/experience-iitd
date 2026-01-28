@@ -1,10 +1,10 @@
 import React from "react";
-import Navbar from "../components/Navbar";
+// import Navbar from "../components/Navbar";
 
 function Branches() {
   return (
     <>
-      <Navbar />
+      {/* <Navbar /> */}
 
       <section className="w-full bg-white py-16 px-4">
         <div className="max-w-6xl mx-auto text-center">
