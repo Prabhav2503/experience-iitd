@@ -1,7 +1,7 @@
 import express from "express";
 import { body, validationResult } from "express-validator";
 import { registerClientValidator } from "../dto/loginClientValidator.js";
-import prisma from "../prisma.js";
+import supabase from "../supabase.js";
 const router = express.Router();
 
 router.post("/register", registerClientValidator, async (req, res) => {
@@ -18,14 +18,20 @@ router.post("/register", registerClientValidator, async (req, res) => {
       .json({ message: "Forbidden: only admin can register new users" });
   }
   try {
-    const user = await prisma.user.create({
-      data: {
+    const { data: user, error } = await supabase
+      .from('users')
+      .insert({
         name,
         role,
         username,
         password,
-      },
-    });
+      })
+      .select()
+      .single();
+    
+    if (error) {
+      throw error;
+    }
     return res
       .status(201)
       .json({ message: "User registered successfully", data: user });
@@ -53,16 +59,26 @@ router.patch("/answer/:id",
     const { answer } = req.body;
     const AuthUser = req.user;
     try {
-      const question = await prisma.question.findUnique({
-        where: { id: id },
-      });
-      if (!question) {
+      const { data: question, error: findError } = await supabase
+        .from('questions')
+        .select('*')
+        .eq('id', id)
+        .single();
+      
+      if (findError || !question) {
         return res.status(404).json({ message: "Question not found" });
       }
-      const updatedQuestion = await prisma.question.update({
-        where: { id: id },
-        data: { answer, answeredBy: AuthUser.name },
-      });
+      
+      const { data: updatedQuestion, error: updateError } = await supabase
+        .from('questions')
+        .update({ answer, answered_by: AuthUser.name })
+        .eq('id', id)
+        .select()
+        .single();
+      
+      if (updateError) {
+        throw updateError;
+      }
       return res
         .status(200)
         .json({
@@ -82,15 +98,24 @@ router.patch("/answer/:id",
 router.delete('/:id', async (req, res) => {
   const { id } = req.params;    
     try {
-        const question = await prisma.question.findUnique({
-          where: { id: id },
-        });
-        if (!question) {
+        const { data: question, error: findError } = await supabase
+          .from('questions')
+          .select('*')
+          .eq('id', id)
+          .single();
+        
+        if (findError || !question) {
           return res.status(404).json({ message: "Question not found" });
         }   
-        await prisma.question.delete({
-          where: { id: id },
-        });
+        
+        const { error: deleteError } = await supabase
+          .from('questions')
+          .delete()
+          .eq('id', id);
+        
+        if (deleteError) {
+          throw deleteError;
+        }
         return res
           .status(200)
           .json({ message: "Question deleted successfully" });    
@@ -103,15 +128,24 @@ router.delete('/:id', async (req, res) => {
 router.delete('/reply/:id', async (req, res) => {
   const { id } = req.params;
     try {
-        const reply = await prisma.replies.findUnique({
-          where: { id: id },
-        });
-        if (!reply) {
+        const { data: reply, error: findError } = await supabase
+          .from('replies')
+          .select('*')
+          .eq('id', id)
+          .single();
+        
+        if (findError || !reply) {
           return res.status(404).json({ message: "Reply not found" });
         }   
-        await prisma.replies.delete({
-          where: { id: id },
-        });
+        
+        const { error: deleteError } = await supabase
+          .from('replies')
+          .delete()
+          .eq('id', id);
+        
+        if (deleteError) {
+          throw deleteError;
+        }
         return res
           .status(200)
           .json({ message: "Reply deleted successfully" });    
