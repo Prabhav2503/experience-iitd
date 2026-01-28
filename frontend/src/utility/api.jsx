@@ -1,6 +1,7 @@
 export const askquestion = async (formData) => {
     const response = await fetch(`${import.meta.env.VITE_BASE_URL}/ask`, {
         method: "POST",
+        credentials: "include",
         headers: {
           "Content-Type": "application/json",
         },
@@ -12,6 +13,7 @@ export const askquestion = async (formData) => {
 export const login = async (formData) => {
     const response = await fetch(`${import.meta.env.VITE_BASE_URL}/login`, {
         method: "POST",
+        credentials: "include",
         headers: {
           "Content-Type": "application/json",
         },
@@ -23,6 +25,7 @@ export const login = async (formData) => {
 export const logout = async () => {
     const response = await fetch(`${import.meta.env.VITE_BASE_URL}/logout`, {
         method: "POST",
+        credentials: "include",
         headers: {
           "Content-Type": "application/json",
         },
@@ -33,6 +36,7 @@ export const logout = async () => {
 export const register = async (formData) => {
     const response = await fetch(`${import.meta.env.VITE_BASE_URL}/register`, {
         method: "POST",
+        credentials: "include",
         headers: {
           "Content-Type": "application/json",
         },
@@ -44,6 +48,7 @@ export const register = async (formData) => {
 export const fetchAllQuestion = async (category) => {
     const response = await fetch(`${import.meta.env.VITE_BASE_URL}/all`, {
         method: "POST",
+        credentials: "include",
         headers: {
           "Content-Type": "application/json",
         },
@@ -55,6 +60,7 @@ export const fetchAllQuestion = async (category) => {
 export const likeaquestion = async (questionid) => {
     const response = await fetch(`${import.meta.env.VITE_BASE_URL}/like/${questionid}`, {
         method: "PATCH",
+        credentials: "include",
         headers: {
           "Content-Type": "application/json",
         },
@@ -64,6 +70,7 @@ export const likeaquestion = async (questionid) => {
 export const dislikeaquestion = async (questionid) => {
     const response = await fetch(`${import.meta.env.VITE_BASE_URL}/dislike/${questionid}`, {
         method: "PATCH",
+        credentials: "include",
         headers: {
           "Content-Type": "application/json",
         },
@@ -74,6 +81,7 @@ export const dislikeaquestion = async (questionid) => {
 export const answerQuestion = async (questionid,answer) => {
     const response = await fetch(`${import.meta.env.VITE_BASE_URL}/answer/${questionid}`, {
         method: "PATCH",
+        credentials: "include",
         headers: {
           "Content-Type": "application/json",
         },
@@ -85,6 +93,7 @@ export const answerQuestion = async (questionid,answer) => {
 export const deletequestion = async (questionid) => {
     const response = await fetch(`${import.meta.env.VITE_BASE_URL}/${questionid}`, {
         method: "DELETE",
+        credentials: "include",
         headers: {
           "Content-Type": "application/json",
         },
@@ -96,6 +105,7 @@ export const deletequestion = async (questionid) => {
 export const deletereply = async (replyid) => {
     const response = await fetch(`${import.meta.env.VITE_BASE_URL}/${replyid}`, {
         method: "DELETE",
+        credentials: "include",
         headers: {
           "Content-Type": "application/json",
         },
