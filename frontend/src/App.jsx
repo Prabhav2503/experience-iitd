@@ -6,6 +6,7 @@ import Campus from './Pages/Campus'
 import FacilitiesandSupport from './Pages/FacilitiesandSupport'
 import Fests from './Pages/Fests'
 import FAQs from './Pages/FAQs'
+import Answeredfaqs from './Pages/Answeredfaqs'
 // import ScrollToTop from './Components/ScrolltoTop'
 
 const App = () => {
@@ -13,6 +14,7 @@ const App = () => {
     <>
     {/* <ScrollToTop /> */}
        <Routes>
+        <Route path="/answeredfaqs" element={<Answeredfaqs />} />
         <Route path="/" element={<Home />} />
         <Route path="/branches" element={<Branches />} />
         <Route path="/campus-infra" element={<Campus />} />
