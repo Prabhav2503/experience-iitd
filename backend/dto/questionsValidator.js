@@ -10,6 +10,10 @@ export const askQuestionValidator = [
     .notEmpty()
     .isString()
     .withMessage("Name is required and should be a string"),
+    body("category")
+    .notEmpty()
+    .isString()
+    .withMessage("Category is required and should be a string"),
   body("email")
     .notEmpty()
     .isString()
