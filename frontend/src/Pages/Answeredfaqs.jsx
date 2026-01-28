@@ -58,7 +58,6 @@ function Answeredfaqs() {
       {/* SECTIONS - Only render if category has data */}
       {categoryConfig.map(({ title }, idx) => {
         const filteredData = getFilteredData(title);
-        console.log("Filtered Data for", title, ":", filteredData);
         if (filteredData.length === 0) return null;
         
         return (
