@@ -13,11 +13,18 @@ const app = express();
 
 app.use(
   cors({
-    origin: ["http://localhost:5173", "https://experience-iitd-frontend.vercel.app/"],
+    origin: [
+      "http://localhost:5173",
+      "https://experience-iitd-frontend.vercel.app",
+    ],
     credentials: true,
-    methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
+    methods: ["GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS"],
+    allowedHeaders: ["Content-Type", "Authorization"],
   })
 );
+
+app.options("*", cors());
+
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(cookieParser());
