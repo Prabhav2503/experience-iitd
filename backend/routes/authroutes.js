@@ -6,6 +6,10 @@ import { generateToken } from "../utility/helper.js";
 
 const router = express.Router();
 
+router.get("/",(req,res) => {
+  return res.status(200).json({message: "Auth route is working"});
+})
+
 router.post("/login", loginClientValidator, async (req, res) => {
   const errors = validationResult(req);
   if (!errors.isEmpty()) {
@@ -29,7 +33,7 @@ router.post("/login", loginClientValidator, async (req, res) => {
   });
   res.cookie("token", token, {
       httpOnly: true,
-      secure: true,
+      secure: true, 
       maxAge: 24 * 60 * 60 * 1000,
       sameSite: "none",
     });

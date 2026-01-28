@@ -13,7 +13,7 @@ const app = express();
 
 app.use(
   cors({
-    origin: "https://experience-iitd-frontend.vercel.app",
+    origin: "*",
     credentials: true,
     methods: ["GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS"],
     allowedHeaders: ["Content-Type", "Authorization"],
@@ -21,7 +21,7 @@ app.use(
 );
 
 
-app.options(/.*/, cors());
+// app.options(/.*/, cors());
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
