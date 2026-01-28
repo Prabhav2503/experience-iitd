@@ -45,14 +45,13 @@ export const register = async (formData) => {
     return response;
 };
 
-export const fetchAllQuestion = async (category) => {
+export const fetchAllQuestion = async () => {
     const response = await fetch(`${import.meta.env.VITE_BASE_URL}/all`, {
-        method: "POST",
+        method: "GET",
         credentials: "include",
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify({category: category}),
       });
     return response;
 };
@@ -77,6 +76,31 @@ export const dislikeaquestion = async (questionid) => {
       });
     return response;
 };
+
+export const repltoquestion = async (formData) => {
+    const response = await fetch(`${import.meta.env.VITE_BASE_URL}/reply`, {
+        method: "POST",
+        credentials: "include",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
+      });
+    return response;
+};
+
+
+export const getallreply = async (questionid) => {
+    const response = await fetch(`${import.meta.env.VITE_BASE_URL}/replies/${questionid}`, {
+        method: "GET",
+        credentials: "include",
+        headers: {
+          "Content-Type": "application/json",
+        },
+      });
+    return response;
+};
+
 
 export const answerQuestion = async (questionid,answer) => {
     const response = await fetch(`${import.meta.env.VITE_BASE_URL}/answer/${questionid}`, {

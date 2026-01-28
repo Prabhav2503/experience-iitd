@@ -7,12 +7,12 @@ import FacilitiesandSupport from './Pages/FacilitiesandSupport'
 import Fests from './Pages/Fests'
 import FAQs from './Pages/FAQs'
 import Answeredfaqs from './Pages/Answeredfaqs'
+import { AuthProvider } from './context/AuthContext'
 // import ScrollToTop from './Components/ScrolltoTop'
 
 const App = () => {
   return (
-    <>
-    {/* <ScrollToTop /> */}
+    <AuthProvider>
        <Routes>
         <Route path="/answeredfaqs" element={<Answeredfaqs />} />
         <Route path="/" element={<Home />} />
@@ -22,7 +22,7 @@ const App = () => {
         <Route path="/fests" element={<Fests />} />
         <Route path="/faq" element={<FAQs />} />
       </Routes>
-    </>
+    </AuthProvider>
   )
 }
 

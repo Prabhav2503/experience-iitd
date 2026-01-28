@@ -2,13 +2,14 @@ import React, { useState } from "react";
 import iitdlogo from "../assets/iitdlogo.png";
 import outreachlogo from "../assets/outreachlogo.png";
 import { login, logout, register } from "../utility/api";
+import { useAuth } from "../context/AuthContext";
 
 function Heropage() {
+  const { user, setUser } = useAuth();
   const [isLoginOpen, setIsLoginOpen] = useState(false);
   const [isRegisterOpen, setIsRegisterOpen] = useState(false);
   const [showPassword, setShowPassword] = useState(false);
   const [showRegisterPassword, setShowRegisterPassword] = useState(false);
-  const [user, setUser] = useState(null);
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState("");
   const [registerError, setRegisterError] = useState("");

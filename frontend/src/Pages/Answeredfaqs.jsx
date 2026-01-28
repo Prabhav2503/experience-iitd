@@ -1,95 +1,80 @@
-import React from "react";
-import { FaThumbsUp } from "react-icons/fa";
+import { useEffect, useState } from "react";
 import FAQSection from "../Components/FAQSection";
-import FAQCard from "../Components/FAQCard";
+import {fetchAllQuestion} from "../utility/api.jsx";
+import { useAuth } from "../context/AuthContext";
 
-/* -------------------- SAMPLE DATA --------------------
-   Replace this with backend API data later
----------------------------------------------------- */
-
-const faqData = [
-  {
-    id: 1,
-    category: "campus",
-    question: "What is the transition to hostel life like?",
-    
-    answeredBy: "2nd yr BTech Mech. Engg",
-    likes: 3,
-    replies: [
-        {
-        user: "userid45",
-        text:
-          "You should be ready with all the essential documents (Aadhar, PAN, etc.) and other documents like income (if applicable)...",
-        likes: 3,
-      },
-    ],
-  },
-  {
-    id: 2,
-    category: "campus",
-    question: "What essentials should we bring to the hostel?",
-    
-    answeredBy: "1st yr BTech Civil Engg",
-    likes: 9,
-    replies: [
-      {
-        user: "userid45",
-        text:
-          "You should be ready with all the essential documents (Aadhar, PAN, etc.) and other documents like income (if applicable)...",
-        likes: 3,
-      },
-    ],
-  },
-  {
-    id: 3,
-    category: "placements",
-    question: "What is the transition to hostel life like?",
-    answeredBy: "2nd yr BTech Mech. Engg",
-    likes: 3,
-    replies: [
-        {
-        user: "userid45",
-        text:
-          "You should be ready with all the essential documents (Aadhar, PAN, etc.) and other documents like income (if applicable)...",
-        likes: 3,
-      },
-    ],
-  },
+const categoryConfig = [
+  { title: "Campus & City Life" },
+  { title: "Placements & Careers" },
+  { title: "Departments & Branches" },
+  { title: "Academics & Curriculum" },
+  { title: "Student Life & Activities" },
+  { title: "Cultural & Fests Life" },
+  { title: "Campus Facilities" },
+  { title: "Research & Academic Focus" },
+  { title: "Others" },
 ];
 
-/* -------------------- COMPONENT -------------------- */
-
 function Answeredfaqs() {
+  const { user } = useAuth();
+  const [faqData, setFaqData] = useState([]);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    async function fetchData() {
+      try {
+        const response = await fetchAllQuestion();
+        const data = await response.json();
+        setFaqData(data.data || []);
+      } catch (error) {
+        console.error("Error fetching FAQs:", error);
+      } finally {
+        setLoading(false);
+      }
+    }
+    fetchData();
+  }, []);
+
+  // Filter data by category
+  const getFilteredData = (category) => {
+    return faqData.filter((item) => item.category === category);
+  };
+
+  if (loading) {
+    return (
+      <section className="w-full bg-white py-20 px-4 font-barlow">
+        <h1 className="text-4xl font-bold text-center mb-6">FAQ</h1>
+        <p className="text-center text-gray-500">Loading...</p>
+      </section>
+    );
+  }
+
   return (
     <section className="w-full bg-white py-20 px-4 font-barlow">
 
       {/* PAGE TITLE */}
       <h1 className="text-4xl font-bold text-center mb-6">FAQ</h1>
 
-      {/* SECTIONS */}
-      <FAQSection
-        title="Campus & City Life"
-        category="campus"
-        data={faqData}
-      />
+      {/* SECTIONS - Only render if category has data */}
+      {categoryConfig.map(({ title }, idx) => {
+        const filteredData = getFilteredData(title);
+        console.log("Filtered Data for", title, ":", filteredData);
+        if (filteredData.length === 0) return null;
+        
+        return (
+          <FAQSection
+            key={idx}
+            title={title}
+            category={title}
+            data={filteredData}
+            user={user}
+          />
+        );
+      })}
 
-      <FAQSection
-        title="Placements & Careers"
-        category="placements"
-        data={faqData}
-      />
-
-      <FAQSection
-        title="Academics & Curriculum"
-        category="academics"
-        data={faqData}
-      />
-
-      <FAQSection
-        title="Miscellaneous / Fun"
-        category="misc"
-        data={faqData}
-      />
+      {faqData.length === 0 && (
+        <p className="text-center text-gray-500">No FAQs available.</p>
+      )}
     </section>
   );
 }

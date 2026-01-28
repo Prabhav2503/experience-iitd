@@ -1,10 +1,10 @@
 import React from "react";
 import { useEffect } from "react";
-import { useLocation } from "react-router-dom";
+import { useLocation,useNavigate } from "react-router-dom";
 
 
 function FAQs() {
-
+  const navigate = useNavigate();
   const { hash } = useLocation();
 
   useEffect(() => {
@@ -86,6 +86,9 @@ function FAQs() {
   2nd yr BTech Mech. Engg.
 </p>
             </div>
+            <div className="w-full flex items-center justify-end " onClick={()=>(navigate('/answeredfaqs'))}>
+              <p className="hover:underline text-blue-800 hover:cursor-pointer">more...</p>
+            </div>
           </div>
 
           {/* ================= Academics & Curriculum ================= */}
@@ -153,6 +156,9 @@ function FAQs() {
   3rd yr BTech EE
 </p>
             </div>
+            <div className="w-full flex items-center justify-end " onClick={()=>(navigate('/answeredfaqs'))}>
+              <p className="hover:underline text-blue-800 hover:cursor-pointer">more...</p>
+            </div>
           </div>
 
           {/* ================= Placements & Careers ================= */}
@@ -171,6 +177,9 @@ function FAQs() {
               <p className=" text-xs italic text-[#565656] text-right">
   2nd yr BTech Mech. Engg.
 </p>
+            </div>
+            <div className="w-full flex items-center justify-end " onClick={()=>(navigate('/answeredfaqs'))}>
+              <p className="hover:underline text-blue-800 hover:cursor-pointer">more...</p>
             </div>
           </div>
 
@@ -215,6 +224,9 @@ function FAQs() {
   3rd yr BTech Chemical Engg.
 </p>
             </div>
+            <div className="w-full flex items-center justify-end " onClick={()=>(navigate('/answeredfaqs'))}>
+              <p className="hover:underline text-blue-800 hover:cursor-pointer">more...</p>
+            </div>
           </div>
 
           {/* ================= Research & Academics Focus ================= */}
@@ -245,6 +257,9 @@ function FAQs() {
               <p className=" text-xs italic text-[#565656] text-right">
   3rd yr BTech Chemical Engg.(dual)
 </p>
+            </div>
+            <div className="w-full flex items-center justify-end " onClick={()=>(navigate('/answeredfaqs'))}>
+              <p className="hover:underline text-blue-800 hover:cursor-pointer">more...</p>
             </div>
           </div>
 
@@ -289,9 +304,23 @@ function FAQs() {
   3rd yr BTech Maths and Computing
 </p>
             </div>
+            <div className="w-full flex items-center justify-end " onClick={()=>(navigate('/answeredfaqs'))}>
+              <p className="hover:underline text-blue-800 hover:cursor-pointer">more...</p>
+            </div>
           </div>
 
+          {/* Explore More Button */}
+          <div className="mt-12 flex justify-center">
+            <button
+              onClick={() => navigate('/answeredfaqs')}
+              className="bg-[#FB923C] hover:bg-[#ea8532] text-white font-semibold py-3 px-8 rounded-lg shadow-md transition-all duration-300 hover:scale-105"
+            >
+              Explore More Questions
+            </button>
+          </div>
+            
         </div>
+        
       </section>
     </>
   );

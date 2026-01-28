@@ -2,7 +2,7 @@ import React from "react";
 import FAQCard from "./FAQCard";
 
 
-function FAQSection({ title, category, data }) {
+function FAQSection({ title, category, data, user }) {
   const filteredFAQs = data.filter(item => item.category === category);
 
   if (filteredFAQs.length === 0) return null;
@@ -18,7 +18,7 @@ function FAQSection({ title, category, data }) {
       {/* QUESTIONS */}
       <div className="space-y-10">
         {filteredFAQs.map(faq => (
-          <FAQCard key={faq.id} faq={faq} />
+          <FAQCard key={faq.id} faq={faq} user={user} />
         ))}
       </div>
     </div>
