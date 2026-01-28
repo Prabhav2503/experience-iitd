@@ -28,10 +28,11 @@ router.post("/login", loginClientValidator, async (req, res) => {
     name: user.name,
   });
   res.cookie("token", token, {
-    httpOnly: true,
-    secure: true,
-    sameSite: "None",
-  });
+      httpOnly: true,
+      secure: true,
+      maxAge: 24 * 60 * 60 * 1000,
+      sameSite: "none",
+    });
   return res.status(200).json({ message: "Login successful", data: user });
   }
 
@@ -55,10 +56,11 @@ router.post("/login", loginClientValidator, async (req, res) => {
     name: user.name,
   });
   res.cookie("token", token, {
-    httpOnly: true,
-    secure: true,
-    sameSite: "None",
-  });
+      httpOnly: true,
+      secure: true,
+      maxAge: 24 * 60 * 60 * 1000,
+      sameSite: "none",
+    });
   return res.status(200).json({ message: "Login successful", data: user });
   } catch(err) {
     return res.status(500).json({ message: "Internal server error", error: err.message });

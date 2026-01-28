@@ -11,23 +11,13 @@ dotenv.config();
 
 const app = express();
 
-app.use(cors({
-  origin: ["http://localhost:5173", "https://experience-iitd-frontend.vercel.app"],
-  credentials: true,
-  methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
-  allowedHeaders: ["Content-Type", "Authorization"],
-  exposedHeaders: ["Content-Type"],
-  maxAge: 86400,
-}));
-
-app.options('*', cors({
-  origin: ["http://localhost:5173", "https://experience-iitd-frontend.vercel.app"],
-  credentials: true,
-  methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
-  allowedHeaders: ["Content-Type", "Authorization"],
-  exposedHeaders: ["Content-Type"],
-  maxAge: 86400,
-}));
+app.use(
+  cors({
+    origin: ["http://localhost:5173", "https://experience-iitd-frontend.vercel.app/"],
+    credentials: true,
+    methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
+  })
+);
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(cookieParser());
