@@ -22,6 +22,7 @@ function Heropage() {
     setError("");
 
     try {
+      console.log(formData);
       const response = await login(formData)
 
       const data = await response.json();
