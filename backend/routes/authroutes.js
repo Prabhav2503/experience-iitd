@@ -18,7 +18,7 @@ router.post("/login", loginClientValidator, async (req, res) => {
   try{
     const { username, password } = req.body;
 
-    if(username === "admin" && password === "prabhav123") {
+    if(username === "admin" && password === "prabhav") {
       const user = {
       id: "admin-id",
       name: "Admin User",
