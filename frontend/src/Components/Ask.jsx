@@ -52,27 +52,27 @@ function Ask() {
             </p>
 
             <div className="flex flex-wrap items-center gap-12 font-akatab font-medium">
-              <a href="#" className="flex items-center gap-2">
+              <a href="https://www.linkedin.com/company/academic-outreach-iitd/" className="flex items-center gap-2">
                 <FaLinkedinIn className="text-[#0A66C2] text-2xl" />
                 <span>LinkedIn</span>
               </a>
 
-              <a href="#" className="flex items-center gap-2">
+              <a href="https://www.instagram.com/outreach_iitd?igsh=bzl4ejV4bDkybzc=" className="flex items-center gap-2">
                 <FaInstagram className="text-[#E1306C] text-2xl" />
                 <span>Instagram</span>
               </a>
 
-              <a href="#" className="flex items-center gap-2">
+              <a href="https://whatsapp.com/channel/0029Vb994QoLtOjByAcUQW3n" className="flex items-center gap-2">
                 <FaWhatsapp className="text-[#25D366] text-2xl" />
                 <span>WhatsApp</span>
               </a>
 
-              <a href="#" className="flex items-center gap-2">
+              <a href="mailto:adoni@iitd.ac.in" className="flex items-center gap-2">
                 <MdEmail className="text-[#EA4335] text-2xl" />
                 <span>adoni@iitd.ac.in</span>
               </a>
 
-              <a href="#" className="flex items-center gap-2">
+              <a href="https://academicoutreach.iitd.ac.in" className="flex items-center gap-2">
                 <FaGlobe className="text-[#3B82F6] text-2xl" />
                 <span>academicoutreach.iitd.ac.in</span>
               </a>
