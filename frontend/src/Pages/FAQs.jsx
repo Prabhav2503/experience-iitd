@@ -22,7 +22,7 @@ function FAQs() {
     <>
       
 
-      <section className="w-full bg-white py-16 px-4 font-barlow">
+      <section className="w-full bg-white py-16 px-4 font-poppins ">
         <div className="max-w-6xl mx-auto text-center">
 
           {/* PAGE HEADING */}
@@ -92,7 +92,7 @@ function FAQs() {
           </div>
 
           {/* ================= Academics & Curriculum ================= */}
-          <div id="academics" className="bg-[#F2FEFF] rounded-lg px-10 py-6 text-left mb-8">
+          <div id="academics"   className="bg-[#F2FEFF] font-poppins rounded-lg px-10 py-6 text-left mb-8">
             <h2 className="text-xl font-bold font-barlow text-[#FB923C] text-center mb-10">
               Academics & Curriculum
             </h2>
@@ -162,16 +162,16 @@ function FAQs() {
           </div>
 
           {/* ================= Placements & Careers ================= */}
-          <div id="placements" className="bg-[#F2FEFF] rounded-lg px-10 py-6 text-left mb-8">
-            <h2 className="text-xl font-bold font-barlow text-[#FB923C] text-center mb-10">
+          <div id="placements" className="bg-[#F2FEFF] font-poppins  rounded-lg px-10 py-6 text-left mb-8">
+            <h2 className="text-xl font-bold text-[#FB923C] text-center mb-10">
               Placements & Careers
             </h2>
 
             <div>
-              <p className="font-semibold text-md mb-2">
+              <p className="font-semibold font-poppins text-md mb-2">
                 Is the focus more on placements or research at IITD?
               </p>
-              <p className="text-sm text-gray-800 leading-relaxed">
+              <p className="text-sm font-poppins text-gray-800 leading-relaxed">
                 At IIT Delhi, you’ll find a balance of both. Students are free to choose the path they want, whether that’s research, placements, or even entrepreneurship. On the research side, professors and facilities are top-notch, with personal guidance and strong support for projects and publications. On the placements side, we have a very active placement cell that organizes and manages the entire recruitment process. And if you’re interested in startups, there’s also a dedicated incubation hub where students get mentorship from alumni, industry experts, and even VCs. So while at IITD, you can explore all directions and decide what excites you the most.
               </p>
               <p className=" text-xs italic text-[#565656] text-right">
@@ -184,8 +184,8 @@ function FAQs() {
           </div>
 
           {/* ================= Campus Facilities ================= */}
-          <div id="facilities" className="bg-[#F2FEFF] rounded-lg px-10 py-6 text-left mb-8">
-            <h2 className="text-lg font-bold font-barlow text-[#FB923C] text-center mb-10">
+          <div id="facilities" className="bg-[#F2FEFF] font-poppins rounded-lg px-10 py-6 text-left mb-8">
+            <h2 className="text-lg font-bold font-poppins text-[#FB923C] text-center mb-10">
               Campus Facilities
             </h2>
 
@@ -270,7 +270,7 @@ function FAQs() {
             </h2>
 
             <div className="mb-8">
-              <p className="font-semibold text-md mb-2">
+              <p className="font-semibold font-poppins text-md mb-2">
                 By hearing the name Delhi, we often think about air pollution. How does pollution impact the students of IITD?
               </p>
               <p className="text-sm text-gray-800 leading-relaxed">
