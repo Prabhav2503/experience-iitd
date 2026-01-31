@@ -92,12 +92,12 @@ function Heropage() {
         <img
           src={outreachlogo}
           alt="Outreach Logo"
-          className="h-12 md:h-12 w-auto" // Increased mobile logo size
+          className="h-18 md:h-12 w-auto" // Increased mobile logo size
         />
         <img
           src={iitdlogo}
           alt="IITD Logo"
-          className="h-12 md:h-12 w-auto" // Increased mobile logo size
+          className="h-18 md:h-12 w-auto" // Increased mobile logo size
         />
       </div>
 
@@ -138,7 +138,7 @@ function Heropage() {
       ) : (
         <button
           onClick={() => setIsLoginOpen(true)}
-          className="absolute top-6 right-6 md:top-6 md:right-8 z-30 flex items-center gap-2 bg-[#FB923C] hover:bg-[#f97316] text-white font-semibold py-2.5 px-6 rounded-full shadow-md transition-all duration-300"
+          className="absolute top-6 right-6 md:top-6 md:right-8 z-30 flex items-center gap-2 bg-[#FB923C] hover:bg-[#f97316] text-white font-semibold py-1.5 px-3 rounded-full shadow-md transition-all duration-300"
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
