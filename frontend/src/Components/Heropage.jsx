@@ -92,12 +92,12 @@ function Heropage() {
         <img
           src={outreachlogo}
           alt="Outreach Logo"
-          className="h-18 md:h-12 w-auto" // Increased mobile logo size
+          className="h-18 md:h-26 w-auto" // Increased mobile logo size
         />
         <img
           src={iitdlogo}
           alt="IITD Logo"
-          className="h-18 md:h-12 w-auto" // Increased mobile logo size
+          className="h-18 md:h-26 w-auto" // Increased mobile logo size
         />
       </div>
 
@@ -263,7 +263,7 @@ function Heropage() {
         <div className="max-w-4xl">
 
           {/* MAIN HEADING - Increased mobile text size */}
-          <h1 className="text-[52px] font-alumni md:text-[66px] font-bold text-[#565656] leading-[1.1]">
+          <h1 className="text-[52px] font-alumni md:text-[70px] font-bold text-[#565656] leading-[1.1]">
             #ExperienceIITD
           </h1>
 
