@@ -237,7 +237,7 @@ function Heropage() {
       )}
 
       {/* ================= RIGHT GRADIENT CIRCLE ================= */}
-      <div className="absolute top-[-25%] right-[-10%] md:top-[-30%] md:right-[-5%] w-[800px] h-[800px] rounded-full bg-gradient-to-br from-[#4DB6B6] to-[#BFF5F7]" />
+      <div className="absolute top-[-25%] right-[-10%] md:top-[-30%] md:right-[-5%] w-[750px] h-[750px] rounded-full bg-gradient-to-br from-[#4DB6B6] to-[#BFF5F7]" />
 
       {/* ================= MAIN CONTENT ================= */}
       {/* Increased top padding for mobile to reduce white space and center text better */}
