@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import iitdlogo from "../assets/iitdlogo.png";
+import iitlogo from "../assets/iitlogo.svg";
+import logo from "../assets/logo.svg";
 import outreachlogo from "../assets/outreachlogo.png";
 import { login, logout, register } from "../utility/api";
 import { useAuth } from "../context/AuthContext";
@@ -85,17 +87,17 @@ function Heropage() {
   };
 
   return (
-    <section className="relative w-full min-h-screen bg-white overflow-hidden font-sans">
+    <section className="relative w-full min-h-[85vh] bg-white overflow-hidden font-sans">
 
       {/* ================= LOGOS ================= */}
       <div className="absolute top-6 left-6 md:top-6 md:left-8 flex items-center gap-4 z-20">
         <img
-          src={outreachlogo}
+          src={logo}
           alt="Outreach Logo"
           className="h-18 md:h-26 w-auto" // Increased mobile logo size
         />
         <img
-          src={iitdlogo}
+          src={iitlogo}
           alt="IITD Logo"
           className="h-18 md:h-26 w-auto" // Increased mobile logo size
         />
@@ -263,7 +265,7 @@ function Heropage() {
         <div className="max-w-4xl">
 
           {/* MAIN HEADING - Increased mobile text size */}
-          <h1 className="text-[52px] font-alumni md:text-[70px] font-bold text-[#565656] leading-[1.1]">
+          <h1 className="text-[52px] font-alumni md:text-[90px] font-bold text-[#565656] leading-[1.1]">
             #ExperienceIITD
           </h1>
 

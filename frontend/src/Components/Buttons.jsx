@@ -15,7 +15,7 @@ function Buttons() {
   ];
 
   return (
-    <section className="w-full bg-[#F2FEFF] py-24">
+    <section className="w-full bg-[#F2FEFF] py-15">
       <div className="max-w-6xl mx-auto px-6">
 
         <h2 className="text-center font-poppins text-3xl md:text-4xl font-bold text-[#3F3F3F] mb-12">
