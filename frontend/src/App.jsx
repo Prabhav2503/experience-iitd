@@ -7,6 +7,7 @@ import FacilitiesandSupport from './Pages/FacilitiesandSupport'
 import Fests from './Pages/Fests'
 import FAQs from './Pages/FAQs'
 import Answeredfaqs from './Pages/Answeredfaqs'
+import Login from './Pages/Login'
 import { AuthProvider } from './context/AuthContext'
 // import ScrollToTop from './Components/ScrolltoTop'
 
@@ -16,6 +17,7 @@ const App = () => {
        <Routes>
         <Route path="/answeredfaqs" element={<Answeredfaqs />} />
         <Route path="/" element={<Home />} />
+        <Route path="/login" element={<Login />} />
         <Route path="/branches" element={<Branches />} />
         <Route path="/campus-infra" element={<Campus />} />
         <Route path="/facilities-support" element={<FacilitiesandSupport />} />

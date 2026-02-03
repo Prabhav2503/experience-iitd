@@ -55,28 +55,28 @@ function Ask() {
             */}
             <div className="grid grid-cols-2 md:flex md:flex-row items-center justify-items-center md:justify-end gap-y-8 gap-x-4 md:gap-12 font-akatab font-medium w-full md:w-auto">
               
-              <a href="https://www.linkedin.com/company/academic-outreach-iitd/" className="flex items-center gap-2">
+              <a href="https://www.linkedin.com/company/academic-outreach-iitd/" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2">
                 <FaLinkedinIn className="text-[#0A66C2] text-2xl shrink-0" />
                 <span>LinkedIn</span>
               </a>
 
-              <a href="https://www.instagram.com/outreach_iitd?igsh=bzl4ejV4bDkybzc=" className="flex items-center gap-2">
+              <a href="https://www.instagram.com/outreach_iitd?igsh=bzl4ejV4bDkybzc=" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2">
                 <FaInstagram className="text-[#E1306C] text-2xl shrink-0" />
                 <span>Instagram</span>
               </a>
 
-              <a href="https://whatsapp.com/channel/0029Vb994QoLtOjByAcUQW3n" className="flex items-center gap-2">
+              <a href="https://whatsapp.com/channel/0029Vb994QoLtOjByAcUQW3n" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2">
                 <FaWhatsapp className="text-[#25D366] text-2xl shrink-0" />
                 <span>WhatsApp</span>
               </a>
 
-              <a href="mailto:adoni@iitd.ac.in" className="flex items-center gap-2">
+              <a href="mailto:adoni@iitd.ac.in" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2">
                 <MdEmail className="text-[#EA4335] text-2xl shrink-0" />
                 <span>adoni@iitd.ac.in</span>
               </a>
 
               {/* The 5th item: centered across both columns on mobile */}
-              <a href="https://academicoutreach.iitd.ac.in" className="flex items-center gap-2 col-span-2 md:col-span-1 mt-2 md:mt-0">
+              <a href="https://academicoutreach.iitd.ac.in" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 col-span-2 md:col-span-1 mt-2 md:mt-0">
                 <FaGlobe className="text-[#3B82F6] text-2xl shrink-0" />
                 <span>academicoutreach.iitd.ac.in</span>
               </a>
